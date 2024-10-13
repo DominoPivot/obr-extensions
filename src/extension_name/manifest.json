@@ -1,0 +1,7 @@
+{
+    "name": "That was an example",
+    "manifest_version": 1,
+    "icon": "/extension_name/icon.svg",
+    "author": "DominoPivot",
+    "description": "This is not an actual extension."
+}

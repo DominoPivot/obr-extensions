@@ -1,0 +1,55 @@
+/* border-box everything */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+:root {
+    box-sizing: border-box;
+}
+/* remove default 8px margin */
+body {
+    margin: 0;
+}
+/* maintain hidden attribute behavior when display is set */
+[hidden] {
+    display: none !important;
+}
+/* use rem units for headings */
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.17rem;
+}
+h4 {
+    font-size: 1.00rem;
+}
+h5 {
+    font-size: 0.83rem;
+}
+h6 {
+    font-size: 0.67rem;
+}
+/* use consistent margins for h1 */
+h1 {
+    margin: 0.67em 0;
+}
+/* normalize hr across browsers */
+hr {
+    border-style: solid;
+    border-width: 1px 0 0;
+    color: inherit;
+    height: 0;
+    overflow: visible;
+}
+/* make images blocks */
+img, svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}

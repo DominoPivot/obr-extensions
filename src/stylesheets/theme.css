@@ -1,0 +1,130 @@
+.dark-theme {
+    color-scheme: dark;
+    /*
+        Background color intended for the extension panel.
+        Nearly identical to OBR default, but opaque.
+        Dark enough that pure black has an Lc 0 against it.
+    */
+    --background-color: #2a2c3c;
+    /*
+        Paler background color intended for raised elements (hover or focus).
+        Merely Lc -15.9 but significantly paler than the OBR default.
+    */
+    --raised-background-color: #5a5f73;
+    /*
+        Box-shadow applied to raised elements.
+        None in the dark theme to align with OBR's style.
+    */
+    --raised-box-shadow: none;
+    /*
+        Box-shadow applied to elements floating above the OBR canvas.
+    */
+    --floating-box-shadow:
+        rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+        rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+        rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    /*
+        The brand color of OBR, for selected items and form controls.
+        With an Lc -52.3, do not use it for text.
+    */
+    --primary-color: #b9f;
+    /*
+        Color intended for most text, providing maximum contrast.
+    */
+    --text-color: #fff;
+    /*
+        Color for text of lesser importance, such as form labels and hints.
+        Intentionally paler than the color used in OBR, giving it Lc -76.8.
+        Could be used for 15px/400 text or bigger.
+    */
+    --dimmed-text-color: #d4d5db;
+    /*
+        Color for text meant to be spotted, not actively read.
+        At Lc -34.8 this is mostly meant for disabled controls.
+    */
+    --spot-text-color: #889;
+    /*
+        Color for hyperlinks. Sadly can't be colorful on dark theme.
+    */
+    --hyperlink-text-color: #fff;
+    /*
+        Underline color to use for hyperlinks.
+    */
+    --hyperlink-text-decoration-color: var(--primary-color);
+    /*
+        Outline to apply to focus-visible elements for accessibility.
+    */
+    --focus-visible-outline: 3px solid var(--primary-color);
+}
+.light-theme {
+    color-scheme: light;
+    /*
+        Background color intended for the extension panel.
+        Nearly identical to OBR default, but opaque.
+        Light enough that pure white has an Lc 0 against it.
+    */
+    --background-color: #eff1f7;
+    /*
+        Paler background color intended for raised elements (hover or focus).
+        Intentional departure from OBR's theme which darkens raised elements in the light-theme.
+        Lc 0 so we have to apply a box-shadow to indicate the state change.
+    */
+    --raised-background-color: #fff;
+    /*
+        Box-shadow applied to raised elements.
+        Intentional departure from OBR's theme for a noticeable state change.
+    */
+    --raised-box-shadow:
+        rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+        rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+        rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+
+/* TODO double-check colors below for light theme */
+
+    /*
+        Box-shadow applied to elements floating above the OBR canvas.
+    */
+    --floating-box-shadow:
+        rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+        rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+        rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    /*
+        The brand color of OBR, for selected items and form controls.
+    */
+    --primary-color: #96f;
+    /*
+        Color intended for most text, providing maximum contrast.
+    */
+    --text-color: #000;
+    /*
+        Color for text of lesser importance, such as form labels and hints.
+        Could be used for 15px/400 text or bigger.
+    */
+    --dimmed-text-color: #334;
+    /*
+        Color for text meant to be spotted, such as disabled controls.
+    */
+    --spot-text-color: #aab;
+    /*
+        Color for hyperlinks.
+    */
+    --hyperlink-text-color: #30a;
+    /*
+        Underline color to use for hyperlinks.
+    */
+    --hyperlink-text-decoration-color: var(--primary-color);
+    /*
+        Outline to apply to focus-visible elements for accessibility.
+    */
+    --focus-visible-outline: 3px solid #d3f;
+
+}
+
+:root {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+:any-link {
+    color: var(--hyperlink-text-color);
+    text-decoration-color: var(--hyperlink-text-decoration-color);
+}
