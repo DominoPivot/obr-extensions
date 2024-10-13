@@ -9,6 +9,7 @@ export const OUTPUT_DIRECTORY = "out";
 export const SOURCE_DIRECTORY = "src";
 export const ENTRY_POINTS = [
     "nosdk.ts",
+    "oranges/popover.ts",
     "stylesheets/style.css",
 ].map(path => join(SOURCE_DIRECTORY, path));
 

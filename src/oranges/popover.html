@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang=en>
+<title>O Ranges</title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script type=module>
+import { onAction } from "../nosdk.js";
+    onAction(async () => {
+    await import("./popover.js");
+});
+</script>
+<main id=main>
+    <header id=rangeGridLabel class=extension-name>O Ranges</header>
+    <table id=rangeGrid role=grid aria-labelledby=rangeGridLabel tabindex=0>
+        <thead>
+            <tr>
+                <th id=rangeLabel>Range</th>
+                <th id=behaviorLabel>Behavior</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</main>
+<template id=rangeRowTemplate>
+    <tr>
+        <td tabindex=-1>
+            <input id=rangeInput inputmode=decimal aria-labelledby=rangeLabel tabindex=-1>
+        <td>
+            <select id=behaviorSelect aria-labelledby=behaviorLabel tabindex=-1>
+                <option value=follow selected>Follow</option>
+                <option value=sticky>Sticky</option>
+            </select>
+        <td>
+            <button class=action-button id=removeButton tabindex=-1>Delete</button>
+    </tr>
+</template>
