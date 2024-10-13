@@ -1,4 +1,3 @@
-import { rm } from "node:fs/promises";
-import { OUTPUT_DIRECTORY } from "./path.js";
+import { clean } from "./utils.js";
 
-await rm(OUTPUT_DIRECTORY, { recursive: true, force: true });
+await clean();

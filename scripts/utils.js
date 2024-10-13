@@ -12,7 +12,7 @@ if (join(cwd(), "scripts") !== import.meta.dirname) {
 
 export async function clean () {
     const entries = await readdir(OUTPUT_DIRECTORY, { recursive: true, withFileTypes: true }).catch(() => []);
-    await Promise.allSettled(entries.filter(e => e.isFile()).map(e => unlink(join(e.parentPath, e.name))));
+    await Promise.allSettled(entries.filter(e => e.isFile() && e.name !== ".git").map(e => unlink(join(e.parentPath, e.name))));
     await mkdir(OUTPUT_DIRECTORY, { recursive: true });
 }
 
