@@ -4,7 +4,7 @@ import { cp, mkdir, readdir, unlink } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { cwd } from "node:process";
 import { pipeline } from "node:stream/promises";
-import { OUTPUT_DIRECTORY, SOURCE_DIRECTORY, mapSourceToOutput, shouldBeCopied, shouldBeMinified } from "./path.js";
+import { ENTRY_POINTS, OUTPUT_DIRECTORY, SOURCE_DIRECTORY, mapSourceToOutput, shouldBeCopied, shouldBeMinified } from "./path.js";
 
 if (join(cwd(), "scripts") !== import.meta.dirname) {
     throw new Error("Not running from repository root.");
@@ -48,10 +48,7 @@ export function createBuildContext (overrideSettings) {
             "@owlbear-rodeo/sdk": "../sdk.js",
         },
         bundle: true,
-        entryPoints: [
-            "nosdk.ts",
-            "stylesheets/style.css",
-        ].map(path => join(SOURCE_DIRECTORY, path)),
+        entryPoints: ENTRY_POINTS,
         external: [
             "../sdk.js",
         ],

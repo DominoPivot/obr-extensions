@@ -5,10 +5,12 @@ if (join(cwd(), "scripts") !== import.meta.dirname) {
     throw new Error("Not running from repository root.");
 }
 
-/** Relative path from the project root to the output directory. */
 export const OUTPUT_DIRECTORY = "out";
-/** Relative path from the project root to the source directory. */
 export const SOURCE_DIRECTORY = "src";
+export const ENTRY_POINTS = [
+    "nosdk.ts",
+    "stylesheets/style.css",
+].map(path => join(SOURCE_DIRECTORY, path));
 
 const EXTENSIONS_HANDLED_BY_ESBUILD = [".js", ".ts", ".css"];
 const EXTENSIONS_TO_MINIFY = [".html", ".svg", ".json"];
