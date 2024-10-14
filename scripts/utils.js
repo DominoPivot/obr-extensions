@@ -50,7 +50,6 @@ export function createBuildContext (overrideSettings) {
         bundle: true,
         entryPoints: [
             "nosdk.ts",
-            "oranges/popover.ts",
             "stylesheets/style.css",
         ].map(path => join(SOURCE_DIRECTORY, path)),
         external: [
