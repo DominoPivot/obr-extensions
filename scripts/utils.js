@@ -45,12 +45,12 @@ export function bundleOBR () {
 export function createBuildContext (overrideSettings) {
     return esbuild.context(Object.assign({
         alias: {
-            "@owlbear-rodeo/sdk": "../sdk.js",
+            "@owlbear-rodeo/sdk": "/sdk.js",
         },
         bundle: true,
         entryPoints: ENTRY_POINTS,
         external: [
-            "../sdk.js",
+            "/sdk.js",
         ],
         format: "esm",
         logLevel: "info",

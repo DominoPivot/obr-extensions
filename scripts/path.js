@@ -12,9 +12,9 @@ export const ENTRY_POINTS = [
     "stylesheets/style.css",
 ].map(path => join(SOURCE_DIRECTORY, path));
 
-const EXTENSIONS_HANDLED_BY_ESBUILD = [".js", ".ts", ".css"];
-const EXTENSIONS_TO_MINIFY = [".html", ".svg", ".json"];
-const EXTENSIONS_TO_COPY = [".jpg", ".md", ".png", ".webp"];
+const EXTENSIONS_HANDLED_BY_ESBUILD = [".css", ".js", ".ts"];
+const EXTENSIONS_TO_MINIFY = [".html", ".json", ".svg"];
+const EXTENSIONS_TO_COPY = [".jpg", ".md", ".png", ".txt", ".webp"];
 const PATHS_TO_COPY = [".nojekyll", "CNAME"];
 
 /**
