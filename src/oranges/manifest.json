@@ -2,7 +2,7 @@
     "name": "O Ranges",
     "version": "0.0.0",
     "manifest_version": 1,
-    "icon": "/oranges/icon.svg",
+    "icon": "/oranges/icon-color.svg",
     "author": "DominoPivot",
     "description": "Outline ranges around the selected token.",
     "action": {
