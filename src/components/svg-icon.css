@@ -1,0 +1,7 @@
+@layer components {
+    svg-icon {
+        display: inline-block;
+        background: currentColor;
+        vertical-align: middle;
+    }
+}

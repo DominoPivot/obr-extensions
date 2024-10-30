@@ -1,0 +1,21 @@
+@layer components {
+    circle-button {
+        appearance: none;
+        aspect-ratio: 1 / 1;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        color: var(--text-color);
+        display: inline-flex;
+        margin: 0;
+        padding: 8px;
+
+        &:hover {
+            background: var(--raised-background-color);
+            box-shadow: var(--raised-box-shadow);
+        }
+        &:focus-visible {
+            outline: var(--focus-visible-outline);
+        }
+    }
+}

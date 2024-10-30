@@ -2,35 +2,37 @@
 <html lang=en>
 <title>O Ranges</title>
 <meta name=viewport content="width=device-width, initial-scale=1">
-<script type=module>
-import { onAction } from "../nosdk.js";
-    onAction(async () => {
-    await import("./popover.js");
-});
-</script>
-<main id=main>
-    <header id=rangeGridLabel class=extension-name>O Ranges</header>
-    <table id=rangeGrid role=grid aria-labelledby=rangeGridLabel tabindex=0>
-        <thead>
-            <tr>
-                <th id=rangeLabel>Range</th>
-                <th id=behaviorLabel>Behavior</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+<link rel=stylesheet href=/stylesheets/style.css>
+<script type=module src=popover.js></script>
+
+<main>
+    <header style="display: flex; justify-content: space-between; padding: 1em">
+        <div style="font-size: 1.125rem; font-weight: bold">O Ranges</div>
+        <div style="display: flex">
+            <a href=# target=_blank aria-labelledby=lbl1>
+                <hover-tooltip id=lbl1>Credits</hover-tooltip>
+                <svg-icon width=24 height=24 src=../material-symbols/attribution.svg></svg-icon>
+            </a>
+            <a href=# target=_blank aria-labelledby=lbl2>
+                <hover-tooltip id=lbl2>Help</hover-tooltip>
+                <svg-icon width=24 height=24 src=../material-symbols/help.svg></svg-icon>
+            </a>
+        </div>
+    </header>
+
+    <input inputmode=decimal aria-label="Add Range">
+    <button class=circle-button aria-labelledby=lbl3>
+        <svg-icon width=24 height=24 src=../material-symbols/add-circle.svg></svg-icon>
+        <hover-tooltip id=lbl3>Add</hover-tooltip>
+    </button>
+
+    <table role=grid arial-label="Ranges"></table>
 </main>
-<template id=rangeRowTemplate>
-    <tr>
-        <td tabindex=-1>
-            <input id=rangeInput inputmode=decimal aria-labelledby=rangeLabel tabindex=-1>
-        <td>
-            <select id=behaviorSelect aria-labelledby=behaviorLabel tabindex=-1>
-                <option value=follow selected>Follow</option>
-                <option value=sticky>Sticky</option>
-            </select>
-        <td>
-            <button class=action-button id=removeButton tabindex=-1>Delete</button>
-    </tr>
+
+<template id=range-grid-row-template>
+    <tr><td><input id=erin inputmode=decimal aria-labelleby=rlbl>
+        <td><button id=mbtn class=toggle-button aria-labelleby=mlbl aria-pressed=false>
+                <svg-icon width=24 height=24 src=../material-symbols/footprints.svg></svg-icon>
+            </button>
+        <td><button id=sbtn class=menu-button aria-labelledby=slbl aria-haspopup=listbox>
 </template>
