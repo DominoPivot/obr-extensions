@@ -8,20 +8,32 @@ DominoPivot's OBR extensions are hosted via Github Pages, and can be installed i
 
 Once an extension is added and enabled in a room, its code will be fetched and executed on the browsers of all players who visit the room. You should inform your players before adding third party extensions to the game.
 
-## For developers
+## Directory structure
 
-The `latest` branch should hold the source code of the live version, whose transpiled output can be found on the `gh-pages` branch. Other branches can be considered work-in-progress.
+-   `scripts`: Utility scripts to run in Node.js for bundling and testing.
+-   `src`: Files that may require bundling or minification, and are watched for changes.
+-   `static`: Files that are copied as-is on `build`, and are not watched for changes.
+
+## Branch structure
+
+-   `latest`: Source code of the live version.
+-   `gh-pages`: Live version.
+-   Any other branch is a work-in-progress.
+
+I recommend creating a worktree from `out` to `gh-pages`, then copying the `out/.git` file to `static`.
+
+## Dependencies
 
 At time of writing, this project is built by running `scripts` in Node.js v22.9.0 on Windows, with dependencies managed with `npm`. The build scripts may rely on experimental file system APIs, so your mileage may vary if you use a different Node version or operating system.
 
 -   `npm install` fetches external dependencies.
--   `npm run build` builds the distribution version.
--   `npm run clean` removes any leftover files from previous builds.
--   `npm run watch` runs a local test server and rebuilds on file changes.
+-   `npm run clean` removes output directory from previous builds.
+-   `npm run build` bundles static files, SDK, and production code once.
+-   `npm run watch` runs a server that rebuilds with source maps on file changes.
 
 ## Licensing
 
-At the moment, reproduction of this repository is only allowed for personal use. The code will likely be released under an open license at a later date. (If the last commit on this README file is ancient, open an issue to remind me.)
+Reproduction of this repository is only allowed for personal use. The code will likely be released under an open license at a later date. (If the last commit on this README file is ancient, open an issue to remind me.)
 
 <small>
 
