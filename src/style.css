@@ -16,9 +16,20 @@
         margin: 0;
     }
 
-    /* maintain hidden attribute behavior when display is set */
+    /* increase hidden attribute specificity */
     [hidden] {
         display: none !important;
+    }
+
+    /* utility style for invisible yet accessible names */
+    .visually-hidden:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 
     /* use rem units for headings */

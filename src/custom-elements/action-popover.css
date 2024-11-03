@@ -1,0 +1,17 @@
+@layer components {
+    action-popover, .action-popover {
+        display: block;
+        padding: 1em;
+
+        & > header {
+            display: flex;
+            gap: 1em;
+
+            & > :first-child {
+                flex: auto;
+                font-size: 1.125rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
