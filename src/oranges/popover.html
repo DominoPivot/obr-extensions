@@ -3,53 +3,5 @@
 <title>O Ranges</title>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel=stylesheet href=../style.css>
+<link rel=stylesheet href=popover.css>
 <script type=module src=popover.js crossorigin></script>
-
-<section class=action-popover>
-    <header>
-        <span>O Ranges</span>
-        <a class=icon-button href=credits.html target=_blank aria-label=Credits>
-            <mask-icon src=../material-symbols/attribution.svg></mask-icon>
-        </a>
-        <a class=icon-button href=help.html target=_blank aria-label=Help>
-            <mask-icon src=../material-symbols/help.svg></mask-icon>
-        </a>
-    </header>
-
-    <table class=range-grid role=grid tabindex=0>
-        <thead>
-            <tr>
-                <th scope=col><button type=button tabindex=-1>Range</button></th>
-                <th scope=col><button type=button tabindex=-1>Role</button></th>
-                <th scope=col><button type=button tabindex=-1>Shape</button></th>
-            </tr>
-        </thead>
-
-        <template>
-            <tr>
-                <td>
-                    <button type=button tabindex=-1>Edit</button>
-                    <input type=text inputmode=decimal tabindex=-1 hidden>
-                </td>
-                <td>
-                    <button type=button aria-haspopup=menu tabindex=-1>Type</button>
-                    <menu role=menu hidden>
-                        <li><mask-icon src=../material-symbols/target.svg></mask-icon><span>Target</span></li>
-                        <li><mask-icon src=../material-symbols/footprints.svg></mask-icon><span>Movement</span></li>
-                    </menu>
-                </td>
-                <td>
-                    <button type=button aria-haspopup=menu tabindex=-1>Shape</button>
-                    <menu role=menu hidden>
-                        <li><mask-icon src=range-circle.svg></mask-icon><span>Emanation</span></li>
-                        <li><mask-icon src=range-radius.svg></mask-icon><span>Radius</span></li>
-                        <li><mask-icon src=range-square.svg></mask-icon><span>Square</span></li>
-                        <li><mask-icon src=range-alternating.svg></mask-icon><span>Alternating</span></li>
-                        <li><mask-icon src=range-manhattan.svg></mask-icon><span>Manhattan</span></li>
-                        <li><mask-icon src=../material-symbols/hexagon.svg></mask-icon><span>Hex</span></li>
-                    </menu>
-                </td>
-            </tr>
-        </template>
-    </table>
-</section>

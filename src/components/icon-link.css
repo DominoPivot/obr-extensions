@@ -1,0 +1,20 @@
+@layer components {
+    .icon-link {
+        aspect-ratio: 1 / 1;
+        border: none;
+        border-radius: 50%;
+        color: var(--hyperlink-text-color);
+        text-decoration-color: var(--hyperlink-text-decoration-color);
+        display: inline-flex;
+        margin: 0;
+        padding: 8px;
+
+        &:hover {
+            background: var(--raised-background-color);
+            box-shadow: var(--raised-box-shadow);
+        }
+        &:focus-visible {
+            outline: var(--focus-visible-outline);
+        }
+    }
+}

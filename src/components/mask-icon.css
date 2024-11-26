@@ -1,11 +1,10 @@
 @layer components {
-    mask-icon, .mask-icon {
+    .mask-icon {
         display: inline-block;
         vertical-align: middle;
         height: 24px;
         width: 24px;
         background: currentColor;
-
-        mask: var(--mask-image, none) 0 0 / contain;
+        /* mask property set by application code */
     }
 }

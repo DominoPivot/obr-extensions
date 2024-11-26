@@ -1,4 +1,4 @@
-@layer base, theme, components;
+@layer base, theme, components, utility;
 
 @layer base {
     /* border-box everything */
@@ -11,25 +11,15 @@
         box-sizing: border-box;
     }
 
-    /* remove default 8px margin */
+    /* replace default 8px margin */
     body {
         margin: 0;
+        padding: 1em;
     }
 
     /* increase hidden attribute specificity */
     [hidden] {
         display: none !important;
-    }
-
-    /* utility style for invisible yet accessible names */
-    .visually-hidden:not(:focus):not(:active) {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
     }
 
     /* use rem units for headings */
@@ -204,13 +194,46 @@
         --focus-visible-outline-offset: 3px;
     }
 
-    :root {
+    :root, .dark-theme, .light-theme {
         background-color: var(--background-color);
         color: var(--text-color);
+    }
+
+    :root {
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 16px;
     }
 
     :any-link {
         color: var(--hyperlink-text-color);
         text-decoration-color: var(--hyperlink-text-decoration-color);
+    }
+}
+
+@layer utility {
+    /* utility style for invisible yet accessible names */
+    .visually-hidden:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    .flex-row {
+        display: flex;
+        align-items: center;
+    }
+
+    .extension-name {
+        flex: auto;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+
+    .dimmed {
+        color: var(--dimmed-text-color);
     }
 }

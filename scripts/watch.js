@@ -2,8 +2,9 @@ import { cp } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { cwd } from "node:process";
 import Watcher from "watcher";
-import { OUTPUT, SOURCE, createBuildContext, expectation } from "./config.js";
+import { OUTPUT, SOURCE, STATIC, createBuildContext, expectation } from "./config.js";
 import { minify } from "./minify.js";
+import { build } from "esbuild";
 
 if (join(cwd(), "scripts") !== import.meta.dirname) {
     throw new Error("Not running from repository root.");
@@ -29,7 +30,17 @@ await new Promise(resolve =>
         })
 );
 
-const ctx = await createBuildContext({ sourcemap: true });
+await build({
+    bundle: true,
+    entryPoints: ["@owlbear-rodeo/sdk"],
+    format: "esm",
+    minify: false,
+    outfile: `${OUTPUT}/sdk.js`,
+});
+
+await cp(STATIC, OUTPUT, { recursive: true });
+
+const ctx = await createBuildContext({ jsxDev: true, jsx: "automatic", minify: false });
 await ctx.serve({
     servedir: "out",
     onRequest ({ method, path, timeInMS }) {

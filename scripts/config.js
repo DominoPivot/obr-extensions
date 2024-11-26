@@ -18,13 +18,14 @@ export function createBuildContext (overrideSettings) {
         bundle: true,
         entryPoints: [
             "nosdk.ts",
-            "oranges/popover.ts",
+            "oranges/popover.tsx",
             "style.css",
         ].map(path => join(SOURCE, path)),
         external: [
             "/sdk.js",
         ],
         format: "esm",
+        jsx: "automatic",
         logLevel: "info",
         minify: true,
         outbase: SOURCE,
@@ -35,7 +36,7 @@ export function createBuildContext (overrideSettings) {
     }, overrideSettings));
 }
 
-export const EXTENSIONS_HANDLED_BY_ESBUILD = [".css", ".js", ".ts"];
+export const EXTENSIONS_HANDLED_BY_ESBUILD = [".css", ".js", ".jsx", ".ts", ".tsx"];
 export const EXTENSIONS_TO_MINIFY = [".html", ".json", ".svg"];
 export const EXTENSIONS_TO_COPY = [".jpg", ".md", ".png", ".txt", ".webp"];
 
